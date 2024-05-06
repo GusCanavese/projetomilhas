@@ -12,21 +12,24 @@
         <!-- Font Awsome -->
         <script src="https://kit.fontawesome.com/c770a83cab.js" crossorigin="anonymous"></script>
         <title>Home</title>
-        <style>
-           
-        </style>
     </head>
-<body>
+    <!-- <style>
+        *{
+            border: 1px solid red;
+        }
+    </style> -->
+<body style="background-color: whitesmoke;">
 
 
-    <head>
+    <header>
         <div class="container">
-            <nav class="navbar bg-warning row justify-content-start">
-                <div class="col-md-4"><img src="../static/fotomilhas.png" width="100px"></div>
-                <div class="col-md-4 " style="text-align: center; font-family: Cambria;"><h2>FICHA DE CADASTRO</h2></div>
+            <nav class="navbar  row justify-content-start" style="background-color: #6D6D6D; border-radius: 0px 0px 10px 10px ;">
+                <div class="col-md-4"><img src="../static/fotomilhas.png" width="100px" ></div>
+                <div class="col-md-4 " style="text-align: center;"><h2>FICHA DE CADASTRO</h2></div>
+                <div class="col-md-4" style="text-align: right;"><img src="../static/LogoUFSJ.png"  width="100px" ></div>
             </nav>
-        </div>    
-    </head>
+        </div>   
+    </header>
 
 
     <section>
@@ -38,20 +41,20 @@
                     <h3 class="mt-4 mb-5" for="foto">Coloque uma foto do membro</h3>
                     <input type="file" class="form-control-file  btn btn-light" id="foto" name="foto">
                     <br><br><br><br><br><br><br><hr>
-                    <a class="btn btn-primary" value="enviar formulario" href="{% url 'capitania' %}"> Acessar área administrativa</a>
+                    <a class="btn btn-danger" value="enviar formulario" href="{% url 'capitania' %}"> Acessar área administrativa</a>
                 </div>
 
 
 
 
                 <div class="col-md-6  container"> 
-                    <form class="row " method="post">  
+                    <form class="row " method="post" onsubmit="return confirm('Seu formulario foi enviado com sucesso!')">  
                         {% csrf_token %}
 
                         <!-- campo que coloca o nome bem aqui -->
                         <div class="col-md-12  row" style="margin: 10px;">
                             <h5 class="col-md-4  mt-1" for="nome">Nome</h5>
-                            <div class="col-md-8"><input maxlength="150" class="form-control" name="nome" type="text" id="nome" placeholder="digite seu nome" required></div>
+                            <div class="col-md-8"><input maxlength="150" class="form-control" name="nome" type="text" id="nome"  required></div>
                         </div>
 
                         <!-- data de nascimento -->
@@ -63,19 +66,19 @@
                         <!-- campo do curso/ setor -->
                         <div class="col-md-12  row" style="margin: 10px;">
                             <h5 class="col-md-4  mt-1" for="curso">Curso/Setor</h5>
-                            <div class="col-md-8"><input maxlength="150" class="form-control" name="curso" type="text" id="curso" placeholder="Digite o curso e o Setor"required></div>
+                            <div class="col-md-8"><input maxlength="150" class="form-control" name="curso" type="text" id="curso" required></div>
                         </div>
 
                         <!-- matricula do membro -->
                         <div class="col-md-12  row" style="margin: 10px;">
                             <h5 class="col-md-4  mt-1" for="matricula">Matrícula</h5>
-                            <div class="col-md-8"><input maxlength="10" class="form-control" name="matricula" type="number" id="matricula" placeholder="000000000"required></div>
+                            <div class="col-md-8"><input maxlength="12" class="form-control" name="matricula" type="text" id="matricula" required></div>
                         </div>
 
                         <!-- email do membro cadastrado -->
                         <div class="col-md-12  row" style="margin: 10px;">
                             <h5 class="col-md-4  mt-1" for="email">Email</h5>
-                            <div class="col-md-8"><input maxlength="150" class="form-control" name="email" type="email" id="email" placeholder="example@gmail.com"required></div>
+                            <div class="col-md-8"><input maxlength="150" class="form-control" name="email" type="email" id="email" required></div>
                         </div>
 
                         <!-- quando entrou no milhas -->
@@ -93,11 +96,11 @@
                         <!-- pontos tomados -->
                         <div class="col-md-12  row" style="margin: 10px;">
                             <h5 class="col-md-4  mt-1" for="pontos">Pontos</h5>
-                            <div class="col-md-8"><input maxlength="2" class="form-control" name="pontos" type="number" id="pontos"required></div>
+                            <div class="col-md-8"><input maxlength="2" class="form-control" name="pontos" type="text" id="pontos"required></div>
                         </div>
 
                         <!-- cargos -->
-                        <div class="col-md-12  row" style="margin: 10px;">
+                        <div class="col-md-12 form-group row" style="margin: 10px;">
                             <h5 class="col-md-4  mt-1" for="cargo">Cargo</h5>
                             <div class="col-md-8"><input maxlength="100" class="form-control" name="cargo" type="text" id="cargo"required></div>
                         </div>
@@ -105,11 +108,11 @@
                         <!-- informacoes gerais -->
                         <div class="col-md-12  row" style="margin: 10px;">
                             <h5 class="col-md-4  mt-1" for="cargo">info gerais</h5>
-                            <div class="col-md-8"><textarea maxlength="300" class="form-control" name="geral" type="are" id="geral"required></textarea></div>
+                            <div class="col-md-8"><textarea maxlength="300" class="form-control" name="geral" type="textarea" id="geral"required></textarea></div>
                         </div>
          
                         <!-- botao que envia formulario para o BD -->
-                        <div class="col-md-12 mb-3 mt-2" style="text-align: center;"><button  type="submit" class="btn btn-primary" value="enviar formulario">enviar formulario</div>
+                        <div class="col-md-12 mb-3 mt-2" style="text-align: center;"><button type="submit" class="btn btn-danger" value="enviar formulario">enviar formulario</div>
                     </form>
                 </div>
             </div>

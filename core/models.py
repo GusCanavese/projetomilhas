@@ -5,7 +5,7 @@ class Membro(models.Model):
     nome      = models.CharField(max_length=150,  default='null')
     data      = models.DateField()
     curso     = models.CharField(max_length=150,  default='null')
-    matricula = models.CharField(max_length=10,   default='null')
+    matricula = models.CharField(max_length=12,   default='null')
     email     = models.EmailField(max_length=150, default='null')
     entrada   = models.DateField()
     saida     = models.DateField()
@@ -17,4 +17,3 @@ class Membro(models.Model):
 
     def __str__(self) -> str:
         return self.nome 
- 

@@ -27,13 +27,10 @@ def home(request):
         return render(request, 'home.html')
 
 
- 
-
-
 
 # botao que leva para area administrativa
 def capitania(request):
     return redirect(reverse('capitania'))
 
-    
+
      
